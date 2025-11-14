@@ -1,2 +1,20 @@
-<h1> María Carrero Mena </h1>
-<h1> Desarrolladora & Diseñadora </h1>
+<header class="header">
+  <div class="header-titles">
+    <h1 class="nombre">María Carrero Mena</h1>
+    <span class="separator">|</span>
+    <h1 class="roles">
+      <span class="glitch">Desarrolladora</span>
+      <span class="and">&</span>
+      <span class="hovered">Diseñadora</span>
+    </h1>
+  </div>
+
+  <nav class="nav-links">
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>

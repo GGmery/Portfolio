@@ -1,0 +1,122 @@
+.header {
+    padding: 20px;
+    display: flex;              /* coloca títulos y nav en la misma fila */
+    justify-content: space-between; /* separa: títulos a la izquierda, nav a la derecha */
+    align-items: center; 
+}      
+ 
+.header-titles {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* espacio entre elementos */
+}
+
+.nombre {
+    font-family: 'OutfitLight';
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.separator {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.roles {
+    font-family: 'OutfitLight';
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    gap: 10px; /* separa las palabras */
+}
+
+/* Glitch en Desarrolladora */
+.glitch {
+    position: relative;
+    color: #fff;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: "Desarrolladora";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    pointer-events: none; /* no bloquea el hover de Diseñadora */
+}
+
+.glitch:hover::before {
+    color: rgb(0, 0, 0); /* azul */
+    animation: glitchTop 0.3s infinite linear alternate-reverse;
+}
+
+.glitch:hover::after {
+    color: rgb(255, 255, 255); /* verde */
+    animation: glitchBottom 0.3s infinite linear alternate-reverse;
+}
+
+/* Hover en Diseñadora */
+.hovered {
+    color: #fff;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.hovered:hover {
+    color: #ff4081;
+    text-shadow: 0 0 10px rgba(255,64,129,0.8);
+    transform: scale(1.05);
+}
+
+/* Animaciones glitch */
+@keyframes glitchTop {
+    0% { clip: rect(0, 9999px, 0, 0); transform: translate(-2px, -2px); }
+    50% { clip: rect(0, 9999px, 100px, 0); transform: translate(2px, -1px); }
+    100% { clip: rect(0, 9999px, 0, 0); transform: translate(-1px, 2px); }
+}
+
+@keyframes glitchBottom {
+    0% { clip: rect(0, 9999px, 0, 0); transform: translate(2px, 1px); }
+    50% { clip: rect(0, 9999px, 100px, 0); transform: translate(-1px, -2px); }
+    100% { clip: rect(0, 9999px, 0, 0); transform: translate(1px, -1px); }
+}
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    position: relative;
+    font-family: 'OutfitLight';
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Subrayado animado */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ff4081;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}

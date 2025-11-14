@@ -1,0 +1,87 @@
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.background-video {
+  position: absolute;
+  bottom: 0; /* lo mandamos abajo */
+  left: 0;
+  width: 100%;
+  height: 40vh; /* ocupa solo la parte inferior */
+  object-fit: cover;
+  z-index: -2;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1.bold {
+  font-family: 'BoldCustom';
+  font-weight: normal;
+}
+
+h1.scriptin {
+  font-family: 'Scriptin', cursive;
+  font-weight: normal;
+}
+
+/* GGmery con fuente Thesignature */
+.thesignature {
+  font-family: 'Thesignature', cursive;
+  font-size: 2rem;
+  color: #ff4081;
+  text-shadow: 0 0 10px rgba(255,64,129,0.8);
+  animation: glow 2s infinite alternate;
+  position: relative;
+  display: inline-block;
+}
+
+/* La “e” con la X encima */
+.tachada {
+  position: relative;
+  display: inline-block;
+}
+
+.tachada::after {
+  content: "x";
+  position: absolute;
+  top: 1px;   /* ajusta la altura */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8em;
+  color: #000000;
+  font-weight: bold;
+}
+
+p {
+    font-family: 'OutfitMedium';
+}
+
+/* Animación glow */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  }
+  to {
+    text-shadow: 0 0 20px rgb(105, 64, 255);
+  }
+}

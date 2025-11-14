@@ -1,0 +1,42 @@
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Thesignature', cursive; /* tu fuente personalizada */
+  font-size: 2.5rem;
+  color: #ff4081;
+  margin-bottom: 20px;
+}
+
+.socials {
+  margin: 20px 0;
+}
+
+.socials a {
+  margin: 0 12px;
+  font-size: 1.6rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #ff4081;
+  transform: scale(1.2) rotate(5deg);
+}
+
+.footer-bottom {
+    font-family: 'OutfitLight';
+  margin-top: 30px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}

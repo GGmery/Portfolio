@@ -1,20 +1,23 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import * as AOS from 'aos';
-import { Home } from "./home/home";
-import { Header } from './header/header';
-import { Footer } from "./footer/footer";
+
+import { HeaderComponent } from './header/header';
+import { Home } from './home/home';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Home, Header, Footer],
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent, Home, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
+export class AppComponent {
   protected readonly title = signal('portfolio');
+
   ngOnInit() {
-    AOS.init()
-    window.addEventListener('load', AOS.refresh)
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
   }
 }
