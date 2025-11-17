@@ -22,9 +22,29 @@ export class ContactComponent {
     });
   }
 
-  onSubmit() {
-    if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
-    }
-  }
+onSubmit() {
+  if (this.contactForm.invalid) return;
+
+  this.sending = true;
+
+  fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(this.contactForm.value),
+  })
+    .then(res => {
+      this.sending = false;
+      if (res.ok) {
+        alert('Mensaje enviado con éxito');
+        this.contactForm.reset();
+      } else {
+        alert('Error al enviar el mensaje');
+      }
+    })
+    .catch(() => {
+      this.sending = false;
+      alert('Error de conexión con el servidor');
+    });
+}
+
 }
