@@ -1,0 +1,88 @@
+/* Contenedor del formulario */
+form {
+  background: linear-gradient(135deg, #ffa0d4, #2575fc);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  max-width: 600px;
+  margin: 2rem auto;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInUp 0.8s ease-in-out;
+  opacity: 90%;
+}
+
+/* Campos */
+.field {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #292929;
+}
+
+input, textarea {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(53, 53, 53, 0.7);
+}
+
+input:focus, textarea:focus {
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 2px #ff77e9;
+}
+
+/* Mensajes de error */
+small {
+  color: #74319b;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+/* Botón */
+button {
+  background: linear-gradient(90deg, #fd8eeb, #8e99fd, #8ed1fd);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

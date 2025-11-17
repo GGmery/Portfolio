@@ -1,1 +1,41 @@
-<p>contact works!</p>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="field">
+    <label for="nombre">Nombre</label>
+    <input id="nombre" formControlName="nombre" type="text" placeholder="Tu nombre" />
+    <small *ngIf="contactForm.get('nombre')?.touched && contactForm.get('nombre')?.invalid">
+      {{ contactForm.get('nombre')?.errors?.['required'] ? 'El nombre es obligatorio.' : '' }}
+      {{ contactForm.get('nombre')?.errors?.['minlength'] ? 'Mínimo 2 caracteres.' : '' }}
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" type="email" placeholder="tu@email.com" />
+    <small *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+      {{ contactForm.get('email')?.errors?.['required'] ? 'El email es obligatorio.' : '' }}
+      {{ contactForm.get('email')?.errors?.['email'] ? 'Formato de email inválido.' : '' }}
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="asunto">Asunto</label>
+    <input id="asunto" formControlName="asunto" type="text" placeholder="Motivo del mensaje" />
+    <small *ngIf="contactForm.get('asunto')?.touched && contactForm.get('asunto')?.invalid">
+      {{ contactForm.get('asunto')?.errors?.['required'] ? 'El asunto es obligatorio.' : '' }}
+      {{ contactForm.get('asunto')?.errors?.['maxlength'] ? 'Máximo 120 caracteres.' : '' }}
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="mensaje">Mensaje</label>
+    <textarea id="mensaje" formControlName="mensaje" rows="5" placeholder="Cuéntame qué necesitas"></textarea>
+    <small *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.invalid">
+      {{ contactForm.get('mensaje')?.errors?.['required'] ? 'El mensaje es obligatorio.' : '' }}
+      {{ contactForm.get('mensaje')?.errors?.['minlength'] ? 'Mínimo 10 caracteres.' : '' }}
+    </small>
+  </div>
+
+  <button type="submit" [disabled]="sending">
+    {{ sending ? 'Enviando…' : 'Enviar' }}
+  </button>
+</form>

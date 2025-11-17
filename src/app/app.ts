@@ -5,11 +5,12 @@ import * as AOS from 'aos';
 import { HeaderComponent } from './header/header';
 import { Home } from './home/home';
 import { Footer } from './footer/footer';
+import { ContactComponent } from './contact/contact';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, Home, Footer],
+  imports: [RouterOutlet, HeaderComponent, Home, Footer, ContactComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
