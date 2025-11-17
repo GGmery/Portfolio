@@ -20,11 +20,14 @@ module.exports = async (req: any, res: any) => {
 
   try {
     await transporter.sendMail({
-      from: email,
-      to: process.env.MAIL_USER, // el correo que recibirá los mensajes
+      from: process.env.MAIL_USER,   // tu correo (el que envía realmente)
+      to: process.env.MAIL_USER,     // tu correo (el que recibe)
       subject: asunto,
       text: `De: ${nombre} <${email}>\n\n${mensaje}`,
+      replyTo: email                 // aquí se pone el correo del visitante
     });
+
+
 
     res.status(200).json({ ok: true, message: 'Correo enviado con éxito' });
   } catch (error) {
