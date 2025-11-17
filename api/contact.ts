@@ -8,13 +8,16 @@ export default async function handler(req: any, res: any) {
   const { nombre, email, asunto, mensaje } = req.body;
 
   // Configuración del transporter con Gmail (puedes usar otro SMTP si prefieres)
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
-      user: process.env.MAIL_USER, // tu correo
-      pass: process.env.MAIL_PASS, // tu contraseña o App Password
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
     },
-  });
+    });
+
 
   try {
     await transporter.sendMail({
