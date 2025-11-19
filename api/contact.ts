@@ -13,15 +13,15 @@ module.exports = async (req: any, res: any) => {
     port: 465,
     secure: true,
     auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS,
+      user: process.env['MAIL_USER'],
+      pass: process.env['MAIL_PASS'],
     },
   });
 
   try {
     await transporter.sendMail({
-      from: process.env.MAIL_USER,   // tu correo (el que envía realmente)
-      to: process.env.MAIL_USER,     // tu correo (el que recibe)
+      from: process.env['MAIL_USER'],   // tu correo (el que envía realmente)
+      to: process.env['MAIL_USER'],     // tu correo (el que recibe)
       subject: asunto,
       text: `De: ${nombre} <${email}>\n\n${mensaje}`,
       replyTo: email                 // aquí se pone el correo del visitante
