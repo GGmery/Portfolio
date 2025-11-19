@@ -8,10 +8,10 @@ interface Project {
   technologies: string[];
   link?: string;
   image: string;
-  date: string;          // fecha de creación
-  type: string;          // académico, personal, freelance
-  features: string[];    // funcionalidades principales
-  status: string;        // terminado, en desarrollo...
+  date: string
+  type: string;
+  features: string[];
+  status: string; 
 }
 
 
@@ -30,7 +30,7 @@ export class ProjectsComponent {
       technologies: ['React', 'CSS', 'Firebase'],
       link: 'https://github.com/GGmery/Linya-Web',
       image: '/assets/linya.jpg',
-      date: '2025-11', // más compacto
+      date: '2025-11',
       type: 'Académico & personal',
       features: [
         'Diseño de la interfaz',
