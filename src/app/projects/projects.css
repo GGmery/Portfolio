@@ -51,12 +51,19 @@
   color: #00bfff; /* azul brillante */
 }
 
-.project-info p {
+.project-info p,
+.project-info ul,
+.project-info li {
   margin: 0.5rem 0;
   font-family: 'OutfitLight', sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #f0f0f0;
+}
+
+.project-info ul {
+  list-style-type: disc;
+  padding-left: 1.5rem; /* sangría para bullets */
 }
 
 .project-info a {
