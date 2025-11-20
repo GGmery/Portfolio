@@ -25,18 +25,16 @@ interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      title: 'Linya',
-      description: 'Red social para buscar empleo como programador y diseñador gráfico. Proyecto TFC hecho con React.',
-      technologies: ['React', 'CSS', 'Firebase'],
+      title: 'Linya Web',
+      description: 'Página web para buscar empleo en programación y diseño gráfico. Proyecto TFC desarrollado con React y TypeScript.',
+      technologies: ['React', 'TypeScript', 'TailwindCSS', 'Firebase'],
       link: 'https://github.com/GGmery/Linya-Web',
-      image: '/assets/linya.jpg',
+      image: '/assets/images/linyaweb.png',
       date: '2025-11',
       type: 'Académico & personal',
       features: [
-        'Diseño de la interfaz',
-        'Registro y login de usuarios',
-        'Publicación de ofertas de empleo',
-        'Chat entre usuarios'
+        'Diseño de la interfaz web',
+        'Modo día/noche con Liny Aurora y Liny Noctis'
       ],
       status: 'En desarrollo',
     },
@@ -45,7 +43,7 @@ export class ProjectsComponent {
       description: 'Aplicación en Angular para consultar información detallada sobre campeones.',
       technologies: ['Angular', 'TypeScript', 'API REST'],
       link: 'https://github.com/GGmery/Champion-Select-League-of-Legends',
-      image: '/assets/champion.jpg',
+      image: '/assets/images/champion.png',
       date: '2025-11',
       type: 'Personal',
       features: [
@@ -61,7 +59,7 @@ export class ProjectsComponent {
       description: 'Lista de tareas en Angular con clasificación por importancia y urgencia.',
       technologies: ['Angular', 'TypeScript', 'LocalStorage'],
       link: 'https://github.com/GGmery/To-Do-App',
-      image: '/assets/todo.jpg',
+      image: '/assets/images/todo.png',
       date: '2025-10',
       type: 'Personal',
       features: [
@@ -77,7 +75,7 @@ export class ProjectsComponent {
       description: 'Proyecto en JavaScript para ver información de la primera generación de Pokémon (expandible a todas).',
       technologies: ['JavaScript', 'HTML', 'CSS', 'PokéAPI'],
       link: 'https://github.com/GGmery/Pokemon',
-      image: '/assets/pokemon.jpg',
+      image: '/assets/images/pokemon.png',
       date: '2023-09',
       type: 'Personal',
       features: [
