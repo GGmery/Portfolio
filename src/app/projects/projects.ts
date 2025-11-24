@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 interface Project {
   title: string;
   description: string;
   technologies: string[];
   link?: string;
   image: string;
-  date: string
+  date: string; // formato YYYY-MM
   type: string;
   features: string[];
   status: string; 
 }
-
 
 @Component({
   selector: 'app-projects',
@@ -37,6 +35,34 @@ export class ProjectsComponent {
         'Modo día/noche con Liny Aurora y Liny Noctis'
       ],
       status: 'En desarrollo',
+    },
+    {
+      title: "Auroner's Place App",
+      description: 'Red social multiplataforma para la comunidad de AuronPlay. Los usuarios pueden postear, seguirse y conversar en un espacio privado.',
+      technologies: ['Flutter', 'Dart'],
+      // link omitido porque es privado
+      image: '/assets/images/auroner.png',
+      date: '2025-11',
+      type: 'Personal',
+      features: [
+        'Icono de la aplicación',
+        'Sistema de login',
+        'Fotos de perfil para los usuarios'
+      ],
+      status: 'En desarrollo'
+    },
+    {
+      title: "Auroner's Place Web",
+      description: 'Página web informativa para dar a conocer la aplicación Auroner’s Place y sus características.',
+      technologies: ['Angular', 'TypeScript', 'CSS'],
+      // link omitido porque es privado
+      image: '/assets/images/auroner-web.png',
+      date: '2025-11',
+      type: 'Personal',
+      features: [
+        'Por ahora nada, en desarrollo, disculpe las molestias'
+      ],
+      status: 'En desarrollo'
     },
     {
       title: 'Champion Selection',
@@ -76,7 +102,7 @@ export class ProjectsComponent {
       technologies: ['JavaScript', 'HTML', 'CSS', 'PokéAPI'],
       link: 'https://github.com/GGmery/Pokemon',
       image: '/assets/images/pokemon.png',
-      date: '2023-09',
+      date: '2023-10',
       type: 'Personal',
       features: [
         'Listado de Pokémon de la primera generación',
